@@ -1,0 +1,293 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.9;
+    background-color: #CADCFC;
+}
+
+/* Header section designs */
+header {
+    background-color: #00246B;
+    height: 150px;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.topSection h1 {
+    font-size: 40px;
+}
+
+.topSection p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #5dfd82;
+}
+@media only screen and (max-width: 600px)
+{
+    header {
+        height: 250px;
+    }
+}
+
+/* About Section */
+#aboutSection {
+    margin-top: 20px;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.about h2 {
+    margin-bottom: 0%;
+    text-align: center;
+    font-size: 30px;
+}
+
+.about p {
+    text-align: center;
+}
+
+/* Initiatives section */
+#initiatives {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Card Section */
+#card-section {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    perspective: 1000px;
+}
+
+.card .front, .card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: transform 0.8s ease;
+}
+
+.card .front {
+    background-color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.card .front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Ensure image stays behind the text but is always visible */
+}
+
+.card .front h3 {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    z-index: 1; /* Ensure text is above the image */
+}
+
+.card .back {
+    background-color: #fafafa;
+    color: #333;
+    text-align: center;
+    transform: rotateY(180deg);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.card:hover .front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: rotateY(360deg);
+}
+
+footer {
+    background-color: #00246B;
+    color: #fafafa;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Quiz styles */
+#start-quiz {
+    display: block;
+    margin: 0 auto 20px auto; /* Center the button and add some bottom margin */
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #d34afd;
+    color: #fff;
+    border: 2px solid rgb(rgb(240, 223, 36), green, rgb(2, 2, 56));
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#start-quiz:hover {
+    background-color: #2a8fa3;
+    transform: scale(1.05);
+}
+
+#next-question {
+    display: block;
+    margin: 0 auto 20px auto; /* Center the button and add some bottom margin */
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #f7be43;
+    color: #fff;
+    border: 2px solid rgb(rgb(240, 223, 36), green, rgb(2, 2, 56));
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#next-question:hover {
+    display: block;
+    margin: 0 auto 20px auto; /* Center the button and add some bottom margin */
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #042953;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#quiz-container {
+    margin-top: 20px;
+    text-align: center;
+    background: #f0f8ff; /* Light background for the quiz */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quizHeading {
+    text-align: center;
+    font-size: 2rem;
+    color: #003366; /* Dark color for better contrast */
+    margin-bottom: 20px;
+}
+
+.choice {
+    display: block;
+    background-color: #d34afd;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 400px; /* Limit max-width for larger screens */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.choice:hover {
+    background-color: #2a8fa3;
+    transform: scale(1.05); /* Slightly enlarges button on hover */
+}
+
+.correct {
+    background-color: #28a745;
+}
+
+.incorrect {
+    background-color: #dc3545;
+}
+
+#next-question.hidden,
+#score-container.hidden {
+    display: none;
+}
+
+#score-container {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #003366;
+}
+
+/* Facts carousel styles */
+#facts {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #87CEEB;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.factsHeading {
+    margin-bottom: 10px;
+}
+
+#facts-carousel {
+    margin-top: 20px;
+}
+
+.fact {
+    background-color: #fff;
+    color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
